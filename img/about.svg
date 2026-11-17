@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 400" width="560" height="400" role="img" aria-labelledby="t">
+  <title id="t">Para birikimi illüstrasyonu</title>
+  <rect width="560" height="400" rx="28" fill="#f1f5f9"/>
+  <circle cx="420" cy="90" r="110" fill="#fff" opacity="0.7"/>
+  <g>
+    <ellipse cx="200" cy="330" rx="90" ry="22" fill="#f59e0b"/><rect x="110" y="300" width="180" height="30" fill="#f59e0b"/><ellipse cx="200" cy="300" rx="90" ry="22" fill="#fbbf24"/>
+    <ellipse cx="200" cy="290" rx="90" ry="22" fill="#f59e0b"/><rect x="110" y="260" width="180" height="30" fill="#f59e0b"/><ellipse cx="200" cy="260" rx="90" ry="22" fill="#fbbf24"/>
+    <ellipse cx="200" cy="250" rx="90" ry="22" fill="#f59e0b"/><rect x="110" y="220" width="180" height="30" fill="#f59e0b"/><ellipse cx="200" cy="220" rx="90" ry="22" fill="#fbbf24"/>
+    <text x="200" y="228" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" font-weight="700" fill="#fff">₺</text>
+  </g>
+  <rect x="330" y="230" width="36" height="100" rx="8" fill="#16a34a" opacity="0.5"/>
+  <rect x="376" y="190" width="36" height="140" rx="8" fill="#16a34a" opacity="0.7"/>
+  <rect x="422" y="140" width="36" height="190" rx="8" fill="#16a34a"/>
+  <path d="M320 200L400 150L450 90" fill="none" stroke="#0f766e" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M424 86h30v30" fill="none" stroke="#0f766e" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

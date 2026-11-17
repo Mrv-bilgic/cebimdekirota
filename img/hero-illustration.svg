@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 420" width="560" height="420" role="img" aria-labelledby="t d">
+  <title id="t">Bütçem panel illüstrasyonu</title>
+  <desc id="d">Bakiye, halka grafik ve sütun grafik içeren stilize bir panel</desc>
+  <rect x="30" y="30" width="500" height="360" rx="28" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+  <rect x="30" y="30" width="500" height="56" rx="28" fill="#f1f5f9"/>
+  <rect x="30" y="58" width="500" height="28" fill="#f1f5f9"/>
+  <circle cx="62" cy="58" r="7" fill="#fca5a5"/><circle cx="84" cy="58" r="7" fill="#fcd34d"/><circle cx="106" cy="58" r="7" fill="#86efac"/>
+  <text x="60" y="132" font-family="Arial, sans-serif" font-size="14" fill="#64748b">Güncel bakiye</text>
+  <text x="60" y="170" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#1e293b">₺48.350</text>
+  <rect x="60" y="190" width="120" height="10" rx="5" fill="#e2e8f0"/>
+  <rect x="60" y="190" width="84" height="10" rx="5" fill="#16a34a"/>
+  <g>
+  <circle cx="120" cy="292" r="42" fill="none" stroke="#6366f1" stroke-width="20" stroke-dasharray="102.9 161.0" stroke-dashoffset="-0.0" transform="rotate(-90 120 292)"/>
+  <circle cx="120" cy="292" r="42" fill="none" stroke="#f59e0b" stroke-width="20" stroke-dasharray="60.7 203.2" stroke-dashoffset="-102.9" transform="rotate(-90 120 292)"/>
+  <circle cx="120" cy="292" r="42" fill="none" stroke="#ef4444" stroke-width="20" stroke-dasharray="31.7 232.2" stroke-dashoffset="-163.6" transform="rotate(-90 120 292)"/>
+  <circle cx="120" cy="292" r="42" fill="none" stroke="#0ea5e9" stroke-width="20" stroke-dasharray="23.8 240.1" stroke-dashoffset="-195.3" transform="rotate(-90 120 292)"/>
+  <circle cx="120" cy="292" r="42" fill="none" stroke="#94a3b8" stroke-width="20" stroke-dasharray="44.9 219.0" stroke-dashoffset="-219.0" transform="rotate(-90 120 292)"/>
+  </g>
+  <text x="120" y="297" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="700" fill="#1e293b">Gider</text>
+  <g transform="translate(250 120)">
+    <line x1="0" y1="190" x2="250" y2="190" stroke="#e2e8f0" stroke-width="2"/>
+    <rect x="10" y="60" width="22" height="130" rx="6" fill="#16a34a"/>
+    <rect x="38" y="104" width="22" height="86" rx="6" fill="#ef4444"/>
+    <rect x="80" y="50" width="22" height="140" rx="6" fill="#16a34a"/>
+    <rect x="108" y="98" width="22" height="92" rx="6" fill="#ef4444"/>
+    <rect x="150" y="76" width="22" height="114" rx="6" fill="#16a34a"/>
+    <rect x="178" y="110" width="22" height="80" rx="6" fill="#ef4444"/>
+    <rect x="220" y="30" width="22" height="160" rx="6" fill="#16a34a"/>
+    <rect x="248" y="104" width="22" height="86" rx="6" fill="#ef4444"/>
+  </g>
+  <g transform="translate(402 40)">
+    <rect width="132" height="40" rx="20" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
+    <text x="66" y="26" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#15803d">+ ₺6.500</text>
+  </g>
+  <g transform="translate(14 346)">
+    <rect width="124" height="40" rx="20" fill="#fee2e2" stroke="#fca5a5" stroke-width="2"/>
+    <text x="62" y="26" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#b91c1c">- ₺640</text>
+  </g>
+  <circle cx="500" cy="352" r="30" fill="#f59e0b"/>
+  <circle cx="500" cy="352" r="22" fill="none" stroke="#fff" stroke-width="3" opacity="0.8"/>
+  <text x="500" y="361" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" font-weight="700" fill="#fff">₺</text>
+</svg>

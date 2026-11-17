@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420" role="img" aria-labelledby="t">
+  <title id="t">Kategorilere ayırma adımı</title>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1f5f9"/><stop offset="1" stop-color="#e2e8f0"/></linearGradient>
+  </defs>
+  <rect width="1200" height="420" fill="url(#g)"/>
+  <circle cx="1080" cy="60" r="150" fill="#ffffff" opacity="0.55"/>
+  <circle cx="90" cy="380" r="120" fill="#ffffff" opacity="0.5"/>
+  
+  <g><circle cx="380" cy="190" r="100" fill="none" stroke="#6366f1" stroke-width="44" stroke-dasharray="245.0 383.3" stroke-dashoffset="-0.0" transform="rotate(-90 380 190)"/>
+  <circle cx="380" cy="190" r="100" fill="none" stroke="#f59e0b" stroke-width="44" stroke-dasharray="144.5 483.8" stroke-dashoffset="-245.0" transform="rotate(-90 380 190)"/>
+  <circle cx="380" cy="190" r="100" fill="none" stroke="#ef4444" stroke-width="44" stroke-dasharray="75.4 552.9" stroke-dashoffset="-389.6" transform="rotate(-90 380 190)"/>
+  <circle cx="380" cy="190" r="100" fill="none" stroke="#0ea5e9" stroke-width="44" stroke-dasharray="56.5 571.8" stroke-dashoffset="-465.0" transform="rotate(-90 380 190)"/>
+  <circle cx="380" cy="190" r="100" fill="none" stroke="#ec4899" stroke-width="44" stroke-dasharray="50.3 578.1" stroke-dashoffset="-521.5" transform="rotate(-90 380 190)"/>
+  <circle cx="380" cy="190" r="100" fill="none" stroke="#10b981" stroke-width="44" stroke-dasharray="25.1 603.2" stroke-dashoffset="-571.8" transform="rotate(-90 380 190)"/>
+  <circle cx="380" cy="190" r="100" fill="none" stroke="#94a3b8" stroke-width="44" stroke-dasharray="31.4 596.9" stroke-dashoffset="-596.9" transform="rotate(-90 380 190)"/></g>
+  <circle cx="380" cy="190" r="70" fill="#f1f5f9" opacity="0"/>
+  <g font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#1e293b">
+    <rect x="600" y="60" width="260" height="46" rx="23" fill="#fff" stroke="#c7d2fe" stroke-width="2"/><circle cx="628" cy="83" r="9" fill="#6366f1"/><text x="650" y="90">Kira / Konut</text>
+    <rect x="600" y="122" width="260" height="46" rx="23" fill="#fff" stroke="#fde68a" stroke-width="2"/><circle cx="628" cy="145" r="9" fill="#f59e0b"/><text x="650" y="152">Market</text>
+    <rect x="600" y="184" width="260" height="46" rx="23" fill="#fff" stroke="#fecaca" stroke-width="2"/><circle cx="628" cy="207" r="9" fill="#ef4444"/><text x="650" y="214">Fatura</text>
+    <rect x="600" y="246" width="260" height="46" rx="23" fill="#fff" stroke="#bae6fd" stroke-width="2"/><circle cx="628" cy="269" r="9" fill="#0ea5e9"/><text x="650" y="276">Ulaşım</text>
+  </g>
+
+</svg>

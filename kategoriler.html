@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="tr" data-palette="zumrut">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Gelir ve giderlerini kategori bazlı halka ve çubuk grafiklerle incele.">
+  <title>Kategori Grafikleri | Bütçem</title>
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+
+  <!-- Bootstrap 5 ve Bootstrap Icons (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Google Fonts: 3 palet icin gereken aileler. Palet secilince kullanilmayanlari silin -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&family=Poppins:wght@600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Site stilleri: once degiskenler, sonra ortak stiller -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- ===== Ust menu (tum sayfalarda ayni) ===== -->
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg" aria-label="Ana menü">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="img/logo.svg" alt="Bütçem logosu" width="34" height="34">
+          <span>Bütçem</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#anaMenu"
+                aria-controls="anaMenu" aria-expanded="false" aria-label="Menüyü aç veya kapat">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="anaMenu">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+            <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+            <li class="nav-item"><a class="nav-link" href="islemler.html">İşlemler</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle active" href="#" role="button"
+                 data-bs-toggle="dropdown" aria-expanded="false">Raporlar</a>
+              <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item active" href="kategoriler.html"><i class="bi bi-pie-chart"></i>Kategori Grafikleri</a></li>
+            <li><a class="dropdown-item" href="aylik-rapor.html"><i class="bi bi-calendar3"></i>Aylık Rapor</a></li>
+            <li><a class="dropdown-item" href="butce.html"><i class="bi bi-bullseye"></i>Bütçe Hedefleri</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="hakkinda.html">Hakkında</a></li>
+            <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+            <li class="nav-item ms-lg-2 mt-2 mt-lg-0">
+              <a class="btn btn-brand" href="islemler.html#yeni-islem"><i class="bi bi-plus-lg"></i> İşlem Ekle</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===== Sayfa basligi ===== -->
+  <section class="page-header">
+    <div class="container">
+      <nav aria-label="Sayfa yolu">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Ana Sayfa</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Kategori Grafikleri</li>
+        </ol>
+      </nav>
+      <h1>Kategori Grafikleri</h1>
+      <p>Paranın hangi kategorilere gittiğini ve gelirlerin nereden geldiğini gör.</p>
+    </div>
+  </section>
+
+  <main id="icerik" class="section">
+    <div class="container">
+
+      <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-4">
+        <ul class="nav nav-tabs border-0" id="kategoriSekmeleri" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="gider-sekme" data-bs-toggle="tab" data-bs-target="#gider-panel" type="button" role="tab" aria-controls="gider-panel" aria-selected="true">
+              <i class="bi bi-arrow-up-right"></i> Giderler
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="gelir-sekme" data-bs-toggle="tab" data-bs-target="#gelir-panel" type="button" role="tab" aria-controls="gelir-panel" aria-selected="false">
+              <i class="bi bi-arrow-down-left"></i> Gelirler
+            </button>
+          </li>
+        </ul>
+        <!-- BACKEND NOTU: ay secimi GET /api/kategori-ozeti?ay=2026-11 istegine baglanacak -->
+        <form class="d-flex align-items-center gap-2" action="#" method="get">
+          <label for="ay" class="form-label m-0">Dönem</label>
+          <select class="form-select select-auto" id="ay" name="ay">
+            <option value="2026-11" selected>Kasım 2026</option>
+            <option value="2026-10">Ekim 2026</option>
+            <option value="2026-09">Eylül 2026</option>
+          </select>
+        </form>
+      </div>
+
+      <div class="tab-content">
+
+        <!-- ===== Gider sekmesi ===== -->
+        <div class="tab-pane fade show active" id="gider-panel" role="tabpanel" aria-labelledby="gider-sekme" tabindex="0">
+          <div class="row g-4">
+            <div class="col-lg-5">
+              <section class="card card-soft h-100"><div class="card-body text-center py-4 d-flex flex-column justify-content-center">
+                <h2 class="h5 mb-4">Gider dağılımı</h2>
+                <div class="donut" style="--donut: conic-gradient(var(--cat-kira) 0.00% 38.96%, var(--cat-market) 38.96% 62.34%, var(--cat-ulasim) 62.34% 71.43%, var(--cat-fatura) 71.43% 83.12%, var(--cat-eglence) 83.12% 90.91%, var(--cat-saglik) 90.91% 94.81%, var(--cat-diger) 94.81% 100.00%)" role="img"
+                     aria-label="Gider dağılımı halka grafiği. Kira yüzde 39, market yüzde 23,4, fatura yüzde 11,7, ulaşım yüzde 9,1, eğlence yüzde 7,8, diğer yüzde 5,2, sağlık yüzde 3,9.">
+                  <div class="donut-center"><small>Toplam gider</small><strong>23.100,00 ₺</strong></div>
+                </div>
+              </div></section>
+            </div>
+            <div class="col-lg-7">
+              <section class="card card-soft h-100"><div class="card-body">
+                <h2 class="h5 mb-2">Kategori listesi</h2>
+                <ul class="list-unstyled m-0">
+            <li class="cat-row cat-kira">
+              <span class="cat-name"><span class="dot"></span><i class="bi bi-house-door" aria-hidden="true"></i>Kira / Konut</span>
+              <span class="cat-value">9.000,00 ₺ <small>%39,0</small></span>
+              <div class="meter" style="--value:39.0" role="img" aria-label="Kira / Konut payı yüzde 39,0"><span></span></div>
+            </li>
+            <li class="cat-row cat-market">
+              <span class="cat-name"><span class="dot"></span><i class="bi bi-basket" aria-hidden="true"></i>Market</span>
+              <span class="cat-value">5.400,00 ₺ <small>%23,4</small></span>
+              <div class="meter" style="--value:23.4" role="img" aria-label="Market payı yüzde 23,4"><span></span></div>
+            </li>
+            <li class="cat-row cat-ulasim">
+              <span class="cat-name"><span class="dot"></span><i class="bi bi-bus-front" aria-hidden="true"></i>Ulaşım</span>
+              <span class="cat-value">2.100,00 ₺ <small>%9,1</small></span>
+              <div class="meter" style="--value:9.1" role="img" aria-label="Ulaşım payı yüzde 9,1"><span></span></div>
+            </li>
+            <li class="cat-row cat-fatura">
+              <span class="cat-name"><span class="dot"></span><i class="bi bi-lightning-charge" aria-hidden="true"></i>Fatura</span>
+              <span class="cat-value">2.700,00 ₺ <small>%11,7</small></span>
+              <div class="meter" style="--value:11.7" role="img" aria-label="Fatura payı yüzde 11,7"><span></span></div>
+            </li>
+            <li class="cat-row cat-eglence">
+              <span class="cat-name"><span class="dot"></span><i class="bi bi-controller" aria-hidden="true"></i>Eğlence</span>
+              <span class="cat-value">1.800,00 ₺ <small>%7,8</small></span>
+              <div class="meter" style="--value:7.8" role="img" aria-label="Eğlence payı yüzde 7,8"><span></span></div>
+            </li>
+            <li class="cat-row cat-saglik">
+              <span class="cat-name"><span class="dot"></span><i class="bi bi-heart-pulse" aria-hidden="true"></i>Sağlık</span>
+              <span class="cat-value">900,00 ₺ <small>%3,9</small></span>
+              <div class="meter" style="--value:3.9" role="img" aria-label="Sağlık payı yüzde 3,9"><span></span></div>
+            </li>
+            <li class="cat-row cat-diger">
+              <span class="cat-name"><span class="dot"></span><i class="bi bi-three-dots" aria-hidden="true"></i>Diğer</span>
+              <span class="cat-value">1.200,00 ₺ <small>%5,2</small></span>
+              <div class="meter" style="--value:5.2" role="img" aria-label="Diğer payı yüzde 5,2"><span></span></div>
+            </li>
+                </ul>
+              </div></section>
+            </div>
+            <div class="col-12">
+              <section class="card card-soft"><div class="card-body">
+                <h2 class="h5 mb-3">Tutara göre sıralama</h2>
+            <div class="chart-hbar cat-kira">
+              <span>Kira / Konut</span>
+              <div class="meter" style="--value:100.0" role="img" aria-label="Kira / Konut 9.000,00 lira"><span></span></div>
+              <b>9.000 ₺</b>
+            </div>
+            <div class="chart-hbar cat-market">
+              <span>Market</span>
+              <div class="meter" style="--value:60.0" role="img" aria-label="Market 5.400,00 lira"><span></span></div>
+              <b>5.400 ₺</b>
+            </div>
+            <div class="chart-hbar cat-fatura">
+              <span>Fatura</span>
+              <div class="meter" style="--value:30.0" role="img" aria-label="Fatura 2.700,00 lira"><span></span></div>
+              <b>2.700 ₺</b>
+            </div>
+            <div class="chart-hbar cat-ulasim">
+              <span>Ulaşım</span>
+              <div class="meter" style="--value:23.3" role="img" aria-label="Ulaşım 2.100,00 lira"><span></span></div>
+              <b>2.100 ₺</b>
+            </div>
+            <div class="chart-hbar cat-eglence">
+              <span>Eğlence</span>
+              <div class="meter" style="--value:20.0" role="img" aria-label="Eğlence 1.800,00 lira"><span></span></div>
+              <b>1.800 ₺</b>
+            </div>
+            <div class="chart-hbar cat-diger">
+              <span>Diğer</span>
+              <div class="meter" style="--value:13.3" role="img" aria-label="Diğer 1.200,00 lira"><span></span></div>
+              <b>1.200 ₺</b>
+            </div>
+            <div class="chart-hbar cat-saglik">
+              <span>Sağlık</span>
+              <div class="meter" style="--value:10.0" role="img" aria-label="Sağlık 900,00 lira"><span></span></div>
+              <b>900 ₺</b>
+            </div>
+              </div></section>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== Gelir sekmesi ===== -->
+        <div class="tab-pane fade" id="gelir-panel" role="tabpanel" aria-labelledby="gelir-sekme" tabindex="0">
+          <div class="row g-4">
+            <div class="col-lg-5">
+              <section class="card card-soft h-100"><div class="card-body text-center py-4 d-flex flex-column justify-content-center">
+                <h2 class="h5 mb-4">Gelir kaynakları</h2>
+                <div class="donut" style="--donut: conic-gradient(var(--cat-maas) 0.00% 80.00%, var(--cat-freelans) 80.00% 96.25%, var(--cat-gelirdiger) 96.25% 100.00%)" role="img"
+                     aria-label="Gelir dağılımı halka grafiği. Maaş yüzde 80, freelans yüzde 16,3, diğer gelirler yüzde 3,8.">
+                  <div class="donut-center"><small>Toplam gelir</small><strong>40.000,00 ₺</strong></div>
+                </div>
+              </div></section>
+            </div>
+            <div class="col-lg-7">
+              <section class="card card-soft h-100"><div class="card-body">
+                <h2 class="h5 mb-2">Kaynak listesi</h2>
+                <ul class="list-unstyled m-0">
+            <li class="cat-row cat-maas">
+              <span class="cat-name"><span class="dot"></span><i class="bi bi-briefcase" aria-hidden="true"></i>Maaş</span>
+              <span class="cat-value">32.000,00 ₺ <small>%80,0</small></span>
+              <div class="meter" style="--value:80.0" role="img" aria-label="Maaş payı yüzde 80,0"><span></span></div>
+            </li>
+            <li class="cat-row cat-freelans">
+              <span class="cat-name"><span class="dot"></span><i class="bi bi-laptop" aria-hidden="true"></i>Freelans</span>
+              <span class="cat-value">6.500,00 ₺ <small>%16,2</small></span>
+              <div class="meter" style="--value:16.2" role="img" aria-label="Freelans payı yüzde 16,2"><span></span></div>
+            </li>
+            <li class="cat-row cat-gelirdiger">
+              <span class="cat-name"><span class="dot"></span><i class="bi bi-plus-circle" aria-hidden="true"></i>Diğer gelir</span>
+              <span class="cat-value">1.500,00 ₺ <small>%3,8</small></span>
+              <div class="meter" style="--value:3.8" role="img" aria-label="Diğer gelir payı yüzde 3,8"><span></span></div>
+            </li>
+                </ul>
+              </div></section>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ===== Kisa notlar ===== -->
+      <div class="row g-3 mt-2">
+        <div class="col-md-4"><article class="card card-soft h-100"><div class="card-body stat-card">
+          <span class="stat-icon" style="background:#e0e7ff;color:#4338ca"><i class="bi bi-house-door"></i></span>
+          <div><p class="stat-label">En yüksek gider</p><p class="stat-value h5">Kira / Konut</p><p class="stat-note">Toplam giderin %39,0'ı</p></div>
+        </div></article></div>
+        <div class="col-md-4"><article class="card card-soft h-100"><div class="card-body stat-card">
+          <span class="stat-icon is-income"><i class="bi bi-graph-down-arrow"></i></span>
+          <div><p class="stat-label">En çok azalan</p><p class="stat-value h5">Sağlık</p><p class="stat-note">Ekim'e göre %47,1 daha az</p></div>
+        </div></article></div>
+        <div class="col-md-4"><article class="card card-soft h-100"><div class="card-body stat-card">
+          <span class="stat-icon is-accent"><i class="bi bi-exclamation-triangle"></i></span>
+          <div><p class="stat-label">Limit aşan</p><p class="stat-value h5">Eğlence</p><p class="stat-note">Limiti %20 aştı, <a href="butce.html">bütçeye bak</a></p></div>
+        </div></article></div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ===== Alt bilgi (tum sayfalarda ayni) ===== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-5">
+          <a class="d-inline-flex align-items-center gap-2 mb-3 text-white fw-heading fs-4 fw-bold" href="index.html">
+            <img src="img/logo.svg" alt="Bütçem logosu" width="34" height="34" loading="lazy"> Bütçem
+          </a>
+          <p class="mb-0">Günlük gelir ve giderlerini tek yerden kaydet, kategorilere göre incele ve ay sonunda raporunu gör.</p>
+        </div>
+        <div class="col-6 col-lg-3">
+          <h2>Sayfalar</h2>
+          <ul>
+            <li><a href="index.html">Ana Sayfa</a></li>
+            <li><a href="islemler.html">İşlemler</a></li>
+            <li><a href="hakkinda.html">Hakkında</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+          </ul>
+        </div>
+        <div class="col-6 col-lg-4">
+          <h2>Raporlar</h2>
+          <ul>
+            <li><a href="kategoriler.html">Kategori Grafikleri</a></li>
+            <li><a href="aylik-rapor.html">Aylık Rapor</a></li>
+            <li><a href="butce.html">Bütçe Hedefleri</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2">
+        <span>&copy; 2026 Bütçem. Web Programlama 1 dönem ödevi.</span>
+        <span>Kırklareli Üniversitesi, Yazılım Mühendisliği</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS: menü, dropdown, modal, sekme, akordeon ve carousel icin gerekli (kendi JavaScript kodumuz yok) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

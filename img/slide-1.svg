@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" width="1200" height="420" role="img" aria-labelledby="t">
+  <title id="t">İşlem kaydetme adımı</title>
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f1f5f9"/><stop offset="1" stop-color="#e2e8f0"/></linearGradient>
+  </defs>
+  <rect width="1200" height="420" fill="url(#g)"/>
+  <circle cx="1080" cy="60" r="150" fill="#ffffff" opacity="0.55"/>
+  <circle cx="90" cy="380" r="120" fill="#ffffff" opacity="0.5"/>
+  
+  <rect x="370" y="40" width="460" height="300" rx="24" fill="#fff" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="402" y="72" width="130" height="38" rx="19" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="467" y="97" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#15803d">Gelir</text>
+  <rect x="546" y="72" width="130" height="38" rx="19" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="611" y="97" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="700" fill="#64748b">Gider</text>
+  <rect x="402" y="132" width="396" height="40" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="420" y="158" font-family="Arial, sans-serif" font-size="16" fill="#1e293b">₺ 640,00</text>
+  <rect x="402" y="186" width="396" height="40" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="420" y="212" font-family="Arial, sans-serif" font-size="16" fill="#1e293b">Haftalık market alışverişi</text>
+  <rect x="402" y="246" width="396" height="48" rx="24" fill="#0f766e"/>
+  <text x="600" y="277" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="700" fill="#fff">Kaydet</text>
+  <circle cx="200" cy="200" r="70" fill="#f59e0b"/><circle cx="200" cy="200" r="52" fill="none" stroke="#fff" stroke-width="5" opacity="0.8"/>
+  <text x="200" y="222" text-anchor="middle" font-family="Arial, sans-serif" font-size="60" font-weight="700" fill="#fff">₺</text>
+  <circle cx="1000" cy="230" r="46" fill="#16a34a" opacity="0.9"/>
+  <path d="M978 232l16 16 30-34" fill="none" stroke="#fff" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+
+</svg>
