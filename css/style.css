@@ -18,6 +18,7 @@
      3. Footer
      4. Ortak parçalar (bölümler, kutular, butonlar, ikonlar)
      5. Ana sayfa
+     5b. İç sayfalar (sayfa başlığı, form, tablo, sayfa numaraları)
      6. Mobil ve tablet (992px'ten dar ekranlar)
      7. Telefon (576px'ten dar ekranlar)
    ========================================================= */
@@ -331,11 +332,16 @@ h1, h2, h3 {
   font-size: 13px;
   font-weight: bold;
 }
-.kat-market   { background-color: #fef3c7; }
-.kat-ulasim   { background-color: #e0f2fe; }
-.kat-freelans { background-color: #ccfbf1; }
-.kat-eglence  { background-color: #fce7f3; }
-.kat-fatura   { background-color: #fee2e2; }
+.kat-kira       { background-color: #e0e7ff; }
+.kat-market     { background-color: #fef3c7; }
+.kat-ulasim     { background-color: #e0f2fe; }
+.kat-fatura     { background-color: #fee2e2; }
+.kat-eglence    { background-color: #fce7f3; }
+.kat-saglik     { background-color: #d1fae5; }
+.kat-diger      { background-color: #f1f5f9; }
+.kat-maas       { background-color: #dcfce7; }
+.kat-freelans   { background-color: #ccfbf1; }
+.kat-gelirdiger { background-color: #ecfccb; }
 
 /* En çok harcananlar listesi */
 .harcama-listesi {
@@ -370,6 +376,58 @@ h1, h2, h3 {
 }
 .cagri-bandi h2 {
   color: white;
+}
+
+
+/* ---------- 5b. İç sayfalar ---------- */
+
+/* Sayfanın en üstündeki yeşil başlık bandı */
+.sayfa-basligi {
+  padding-top: 40px;
+  padding-bottom: 36px;
+  background: linear-gradient(to right, #115e59, #0f766e);
+  color: white;
+}
+.sayfa-basligi h1 {
+  font-size: 34px;
+}
+.sayfa-basligi p {
+  margin-bottom: 0;
+  color: #d1fae5;
+}
+.sayfa-basligi .yol {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.yol a:link, .yol a:visited {
+  color: white;
+}
+
+/* Form */
+.form-etiket {
+  font-size: 15px;
+  font-weight: bold;
+}
+.form-control {
+  border-radius: 10px;
+}
+.form-control:hover, .form-control:focus {
+  border-color: #0f766e;
+}
+
+/* Tablonun sonundaki toplam satırları */
+.toplam-satir td {
+  font-weight: bold;
+  border-top: 2px solid #e2e8f0;
+}
+
+/* Sayfa numaraları: aktif sayfa yeşil */
+.page-item.active .page-link {
+  background-color: #0f766e;
+  border-color: #0f766e;
+}
+.page-link {
+  color: #0f766e;
 }
 
 
