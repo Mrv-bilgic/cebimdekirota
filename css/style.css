@@ -20,6 +20,7 @@
      5. Ana sayfa
      5b. İç sayfalar (sayfa başlığı, form, tablo, sayfa numaraları)
      5c. Rapor sayfaları (dönem seçimi, aylık grafik, açılır bölümler, limit kutuları)
+     5d. Hakkında ve İletişim
      6. Mobil ve tablet (992px'ten dar ekranlar)
      7. Telefon (576px'ten dar ekranlar)
    ========================================================= */
@@ -498,6 +499,55 @@ h1, h2, h3 {
 .limit-formu {
   padding-top: 20px;
   border-top: 1px solid #e2e8f0;
+}
+
+
+/* ---------- 5d. Hakkında ve İletişim ---------- */
+
+/* "Neler yapılabiliyor?" listesi */
+.onay-listesi {
+  list-style-type: none;
+  padding: 0;
+}
+.onay-listesi li {
+  margin-bottom: 8px;
+}
+
+/* Ekip kartları */
+.ekip-karti {
+  text-align: center;
+}
+.ekip-karti img {
+  width: 88px;
+  height: 88px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+}
+.ekip-karti h3 {
+  font-size: 16px;
+}
+
+/* Teknoloji rozetleri */
+.teknolojiler .badge {
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+/* İletişim sağ sütun: kutular alt alta durduğu için yükseklik içeriğe göre olsun */
+.yan-sutun .kutu {
+  height: auto;
+}
+
+/* İletişim bilgi kutuları: ikon solda, yazı sağda */
+.bilgi-kutusu {
+  overflow: auto;
+}
+.bilgi-kutusu .ikon {
+  float: left;
+  margin-bottom: 0;
+}
+.bilgi-kutusu p {
+  margin-left: 64px;               /* yazı ikonun altına kaymasın */
 }
 
 
