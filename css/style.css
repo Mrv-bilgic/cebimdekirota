@@ -19,6 +19,7 @@
      4. Ortak parçalar (bölümler, kutular, butonlar, ikonlar)
      5. Ana sayfa
      5b. İç sayfalar (sayfa başlığı, form, tablo, sayfa numaraları)
+     5c. Rapor sayfaları (dönem seçimi, aylık grafik, açılır bölümler, limit kutuları)
      6. Mobil ve tablet (992px'ten dar ekranlar)
      7. Telefon (576px'ten dar ekranlar)
    ========================================================= */
@@ -428,6 +429,75 @@ h1, h2, h3 {
 }
 .page-link {
   color: #0f766e;
+}
+
+
+/* ---------- 5c. Rapor sayfaları ---------- */
+
+/* Dönem seçimi (Kategori Grafikleri) */
+.donem-secimi .form-control {
+  display: inline;
+  width: 200px;
+}
+
+/* Ay seçimi (Aylık Rapor): butonlar ve başlık yan yana */
+.ay-secimi h2 {
+  display: inline;
+  margin: 0 12px;
+  font-size: 24px;
+  vertical-align: middle;
+}
+
+/* Son 6 ay grafiği: her ay için gelir ve gider çubuğu */
+.ay-satiri {
+  overflow: auto;                  /* float'lı ay adını kutunun içinde tutar */
+  margin-bottom: 14px;
+}
+.ay-adi {
+  float: left;
+  width: 50px;
+  font-weight: bold;
+  color: #64748b;
+}
+.ay-satiri .progress {
+  height: 18px;
+  margin-left: 60px;               /* ay adının yanından başlasın */
+  font-size: 11px;
+}
+
+/* Açılır bölümler (Bootstrap Collapse) */
+.acilir {
+  margin-bottom: 10px;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+.acilir-baslik {
+  width: 100%;
+  padding: 14px 18px;
+  text-align: left;
+  font-weight: bold;
+  color: #0f172a;
+}
+.acilir-baslik:hover {
+  background-color: #e6f4f1;
+  color: #115e59;
+}
+.acilir-icerik {
+  margin: 0;
+  padding: 0 18px 16px 18px;
+  color: #64748b;
+}
+
+/* Bütçe limit kutularındaki durum rozeti: sağ üstte */
+.durum {
+  float: right;
+}
+
+/* Limit formu: üstünde ince bir çizgi */
+.limit-formu {
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
 }
 
 
