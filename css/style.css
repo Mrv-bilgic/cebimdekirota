@@ -16,7 +16,10 @@
      1. Temel ayarlar
      2. Navbar
      3. Footer
-     4. Mobil ve tablet (992px'ten dar ekranlar)
+     4. Ortak parçalar (bölümler, kutular, butonlar, ikonlar)
+     5. Ana sayfa
+     6. Mobil ve tablet (992px'ten dar ekranlar)
+     7. Telefon (576px'ten dar ekranlar)
    ========================================================= */
 
 
@@ -175,7 +178,202 @@ h1, h2, h3 {
 }
 
 
-/* ---------- 4. Mobil ve tablet (992px'ten dar ekranlar) ---------- */
+/* ---------- 4. Ortak parçalar ---------- */
+
+/* Her bölümün üst ve alt boşluğu */
+.bolum {
+  padding-top: 48px;
+  padding-bottom: 24px;
+}
+
+/* Soluk (gri) yazı */
+.soluk {
+  color: #64748b;
+}
+
+/* Beyaz, kenarlıklı, oval köşeli kutu (kart görünümü) */
+.kutu {
+  height: 100%;
+  padding: 24px;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+}
+.kutu:hover {
+  border-color: #0f766e;           /* üzerine gelince kenar yeşil olur */
+}
+.kutu h3 {
+  font-size: 18px;
+}
+
+/* Kutunun başlığı ve sağındaki link */
+.kutu-baslik {
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+.kutu-baslik a {
+  float: right;
+}
+.kutu-baslik a.small:link, .kutu-baslik a.small:visited {
+  color: #0f766e;
+}
+
+/* Yeşil dolu buton */
+.buton-ana {
+  background-color: #0f766e;
+  border: 2px solid #0f766e;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+}
+.buton-ana:hover {
+  background-color: #115e59;
+  border-color: #115e59;
+  color: white;
+}
+
+/* Yeşil çerçeveli buton: üzerine gelince dolar */
+.buton-cerceve {
+  background-color: transparent;
+  border: 2px solid #0f766e;
+  border-radius: 20px;
+  color: #0f766e;
+  font-weight: bold;
+}
+.buton-cerceve:hover {
+  background-color: #0f766e;
+  color: white;
+}
+
+/* Yuvarlak köşeli kare ikon kutusu */
+.ikon {
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 22px;
+  border-radius: 14px;
+  background-color: #e6f4f1;
+}
+.ikon-gelir { background-color: #dcfce7; }
+.ikon-gider { background-color: #fee2e2; }
+.ikon-vurgu { background-color: #fef3c7; }
+
+/* Gelir yeşil, gider kırmızı */
+.gelir { color: #15803d; }
+.gider { color: #b91c1c; }
+
+
+/* ---------- 5. Ana sayfa ---------- */
+
+/* Giriş bölümü */
+.hero {
+  padding-top: 64px;
+  padding-bottom: 48px;
+  background: linear-gradient(to right, #e6f4f1, white);   /* CSS3 gradyan */
+}
+.hero h1 {
+  font-size: 44px;
+}
+.hero h1 span {
+  color: #0f766e;
+}
+.etiket {
+  padding: 8px 14px;
+  background-color: white;
+  border: 1px solid #e2e8f0;
+  font-size: 14px;
+}
+.hero-maddeler {
+  list-style-type: none;
+  margin-top: 16px;
+  padding: 0;
+}
+.hero-maddeler li {
+  float: left;
+  margin-right: 20px;
+  color: #64748b;
+  font-weight: bold;
+}
+
+/* Özet kutuları */
+.ozet-baslik {
+  margin-bottom: 4px;
+  color: #64748b;
+  font-size: 14px;
+}
+.ozet-deger {
+  margin-bottom: 4px;
+  font-size: 26px;
+  font-weight: bold;
+}
+.ozet-not {
+  margin-bottom: 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+/* Tablo */
+.table th {
+  color: #64748b;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+.tutar {
+  font-weight: bold;
+}
+
+/* Kategori etiketleri (açık renkli, oval) */
+.kategori {
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: bold;
+}
+.kat-market   { background-color: #fef3c7; }
+.kat-ulasim   { background-color: #e0f2fe; }
+.kat-freelans { background-color: #ccfbf1; }
+.kat-eglence  { background-color: #fce7f3; }
+.kat-fatura   { background-color: #fee2e2; }
+
+/* En çok harcananlar listesi */
+.harcama-listesi {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+.harcama-listesi li {
+  padding: 10px 0;
+  border-bottom: 1px solid #e2e8f0;
+  font-weight: bold;
+}
+.harcama-tutar {
+  float: right;
+}
+.harcama-listesi .progress {
+  height: 9px;
+  margin-top: 8px;
+}
+
+/* 3 adım kutuları */
+.adim {
+  text-align: center;
+}
+
+/* Harekete geçirme bandı */
+.cagri-bandi {
+  padding: 40px 24px;
+  border-radius: 22px;
+  background: linear-gradient(to right, #115e59, #0f766e);
+  color: white;
+}
+.cagri-bandi h2 {
+  color: white;
+}
+
+
+/* ---------- 6. Mobil ve tablet (992px'ten dar ekranlar) ---------- */
 @media screen and (max-width: 991px) {
   .hamburger {
     display: block;
@@ -203,5 +401,16 @@ h1, h2, h3 {
   .menu .menu-buton {
     margin-left: 0;
     text-align: center;
+  }
+}
+
+
+/* ---------- 7. Telefon (576px'ten dar ekranlar) ---------- */
+@media screen and (max-width: 575px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+  .ozet-deger {
+    font-size: 22px;
   }
 }
